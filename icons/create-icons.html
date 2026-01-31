@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        canvas { display: none; }
+    </style>
+</head>
+<body>
+    <canvas id="canvas16" width="16" height="16"></canvas>
+    <canvas id="canvas48" width="48" height="48"></canvas>
+    <canvas id="canvas128" width="128" height="128"></canvas>
+    <script>
+        function createIcon(size, canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Draw layers icon
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = size / 16;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            const padding = size * 0.2;
+            const width = size - padding * 2;
+            const height = size * 0.15;
+            
+            // Top layer
+            ctx.beginPath();
+            ctx.moveTo(padding, padding + height);
+            ctx.lineTo(size / 2, padding);
+            ctx.lineTo(size - padding, padding + height);
+            ctx.stroke();
+            
+            // Middle layer
+            ctx.beginPath();
+            ctx.moveTo(padding, size / 2);
+            ctx.lineTo(size / 2, size / 2 - height / 2);
+            ctx.lineTo(size - padding, size / 2);
+            ctx.stroke();
+            
+            // Bottom layer
+            ctx.beginPath();
+            ctx.moveTo(padding, size - padding - height);
+            ctx.lineTo(size / 2, size - padding);
+            ctx.lineTo(size - padding, size - padding - height);
+            ctx.stroke();
+            
+            return canvas.toDataURL();
+        }
+        
+        console.log('Icons created. Right-click each canvas and save as PNG:');
+        console.log('- icon16.png');
+        console.log('- icon48.png');
+        console.log('- icon128.png');
+        
+        createIcon(16, 'canvas16');
+        createIcon(48, 'canvas48');
+        createIcon(128, 'canvas128');
+    </script>
+</body>
+</html>

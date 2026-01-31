@@ -1,0 +1,53 @@
+{
+	"cms": {
+		"icon": "📝",
+		"technologies": {
+			"WordPress": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "WordPress" },
+					{ "type": "script", "src": "wp-(?:content|includes)" },
+					{ "type": "link", "href": "wp-(?:content|includes)" },
+					{ "type": "html", "content": "<link[^>]+wp-(?:content|includes)" }
+				]
+			},
+			"Shopify": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Shopify" },
+					{ "type": "script", "src": "cdn.shopify.com" },
+					{ "type": "html", "content": "Shopify.shop" }
+				]
+			},
+			"Drupal": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Drupal" },
+					{ "type": "html", "content": "drupal" },
+					{ "type": "script", "src": "/sites/(default|all)/(modules|themes)" }
+				]
+			},
+			"Joomla": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Joomla" },
+					{ "type": "script", "src": "/media/jui/" }
+				]
+			},
+			"Wix": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Wix" },
+					{ "type": "script", "src": "static.wixstatic.com" }
+				]
+			},
+			"Squarespace": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Squarespace" },
+					{ "type": "script", "src": "static1.squarespace.com" }
+				]
+			},
+			"Webflow": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Webflow" },
+					{ "type": "html", "content": "webflow" }
+				]
+			}
+		}
+	}
+}
