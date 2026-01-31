@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const categoryIcons = {
     cms: '📝',
     frameworks: '⚛️',
+    'static-site-generators': '🏗️',
+    'ui-frameworks': '🎭',
     analytics: '📊',
     servers: '🖥️',
     languages: '💻',
@@ -25,7 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
     payment: '💳',
     marketing: '📢',
     css: '🎨',
-    hosting: '☁️'
+    hosting: '☁️',
+    fonts: '🔤',
+    maps: '🗺️',
+    video: '🎥',
+    miscellaneous: '🔧',
+    security: '🔒',
+    rum: '⚡',
+    'ab-testing': '🧪'
   };
 
   // Get current tab and request data
@@ -127,7 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const categoryEl = document.createElement('div');
       categoryEl.className = 'category';
 
-      const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+      // Format category name (handle hyphenated names)
+      const categoryName = category
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
       const categoryIcon = categoryIcons[category] || '🔧';
 
       categoryEl.innerHTML = `
@@ -174,25 +187,171 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getTechIcon(name) {
     const icons = {
+      // CMS
       'WordPress': '📰',
       'Shopify': '🛍️',
+      'Drupal': '💧',
+      'Joomla': '🌐',
+      'Wix': '✨',
+      'Squarespace': '⬛',
+      'Webflow': '🌊',
+      'Ghost': '👻',
+      'Medium': '📖',
+
+      // Frameworks
       'React': '⚛️',
       'Vue.js': '💚',
       'Angular': '🅰️',
       'jQuery': '🔷',
+      'Svelte': '🔥',
+      'Ember.js': '🐹',
+      'Backbone.js': '🦴',
+      'Alpine.js': '🏔️',
+      'Preact': '💜',
+      'Lit': '💡',
+
+      // Static Site Generators
+      'Next.js': '▲',
+      'Nuxt.js': '💚',
+      'Gatsby': '🟣',
+      'Hugo': '⚡',
+      'Jekyll': '🧪',
+      'Eleventy': '🎈',
+      'Astro': '🚀',
+      'VitePress': '⚡',
+      'Docusaurus': '🦖',
+
+      // UI Frameworks
+      'Material-UI': '🎨',
+      'Ant Design': '🐜',
+      'Chakra UI': '⚡',
+      'Radix UI': '🎯',
+      'shadcn/ui': '🎭',
+      'Semantic UI': '📱',
+      'Vuetify': '💎',
+      'PrimeNG': '🎲',
+      'Mantine': '🎨',
+
+      // Analytics
       'Google Analytics': '📈',
+      'Google Tag Manager': '🏷️',
       'Facebook Pixel': '👁️',
+      'Hotjar': '🔥',
+      'Mixpanel': '📊',
+      'Adobe Analytics': '📉',
+      'Plausible': '📈',
+      'Matomo': '📊',
+      'Segment': '🔀',
+      'Amplitude': '📡',
+
+      // Servers
       'Nginx': '🟢',
       'Apache': '🪶',
+      'Microsoft IIS': '🔷',
+      'LiteSpeed': '⚡',
+
+      // Languages
       'PHP': '🐘',
       'Python': '🐍',
       'Node.js': '🟩',
+      'Ruby': '💎',
+      'ASP.NET': '🔷',
+      'Java': '☕',
+
+      // E-commerce
       'WooCommerce': '🛒',
+      'Magento': '🛍️',
+      'PrestaShop': '🛒',
+      'BigCommerce': '🏪',
+      'OpenCart': '🛒',
+
+      // CDN
+      'Cloudflare': '☁️',
+      'Amazon CloudFront': '📦',
+      'Fastly': '⚡',
+      'Akamai': '🌐',
+      'jsDelivr': '📦',
+      'unpkg': '📦',
+      'cdnjs': '📦',
+
+      // Payment
       'Stripe': '💳',
       'PayPal': '💰',
-      'Cloudflare': '☁️',
+      'Square': '⬛',
+      'Braintree': '🌳',
+      'Adyen': '💳',
+
+      // CSS
       'Bootstrap': '🅱️',
-      'Tailwind CSS': '🎨'
+      'Tailwind CSS': '🎨',
+      'Foundation': '🏗️',
+      'Bulma': '🎯',
+      'Materialize': '📱',
+      'Pure CSS': '💧',
+
+      // Marketing
+      'Mailchimp': '📧',
+      'HubSpot': '🔶',
+      'Intercom': '💬',
+      'Drift': '🚀',
+      'Zendesk': '💬',
+      'Crisp': '💬',
+      'Tawk.to': '💬',
+
+      // Hosting
+      'Vercel': '▲',
+      'Netlify': '💎',
+      'GitHub Pages': '📄',
+      'Cloudflare Pages': '☁️',
+      'Firebase': '🔥',
+      'AWS': '☁️',
+
+      // Fonts
+      'Google Fonts': '🔤',
+      'Font Awesome': '⭐',
+      'Adobe Fonts': '🎨',
+
+      // Maps
+      'Google Maps': '🗺️',
+      'Mapbox': '🗺️',
+      'Leaflet': '🍃',
+
+      // Video
+      'YouTube': '📺',
+      'Vimeo': '🎬',
+      'Wistia': '📹',
+      'Video.js': '🎥',
+
+      // Miscellaneous
+      'webpack': '📦',
+      'Vite': '⚡',
+      'Parcel': '📦',
+      'Turbo': '🚄',
+      'htmx': '⚡',
+      'Socket.io': '🔌',
+      'Three.js': '🎮',
+      'D3.js': '📊',
+      'Chart.js': '📊',
+      'Lodash': '🔧',
+      'Axios': '🔄',
+      'Day.js': '📅',
+      'Moment.js': '📅',
+
+      // Security
+      'reCAPTCHA': '🔒',
+      'hCaptcha': '🔒',
+      'Cloudflare Turnstile': '🔒',
+
+      // RUM
+      'Cloudflare Browser Insights': '⚡',
+      'New Relic': '📊',
+      'Sentry': '🐛',
+      'Datadog': '🐕',
+
+      // A/B Testing
+      'Optimizely': '🧪',
+      'Google Optimize': '🧪',
+      'VWO': '🧪'
     };
     return icons[name] || '🔧';
   }
