@@ -21,16 +21,18 @@
         for (const pattern of techData.patterns) {
           try {
             if (pattern.type === 'html') {
-              if (pattern.content.test(html)) {
+              const regex = new RegExp(pattern.content, 'i');
+              if (regex.test(html)) {
                 detected = true;
                 confidence += 20;
                 matches.push('HTML content');
               }
             }
-            
+
             else if (pattern.type === 'script') {
+              const regex = new RegExp(pattern.src, 'i');
               const foundScript = scripts.some(script => {
-                if (script.src && pattern.src.test(script.src)) {
+                if (script.src && regex.test(script.src)) {
                   // Try to extract version from script src
                   const versionMatch = script.src.match(/[\d]+\.[\d]+\.[\d]+/);
                   if (versionMatch) {
@@ -46,10 +48,11 @@
                 matches.push('Script tag');
               }
             }
-            
+
             else if (pattern.type === 'link') {
-              const foundLink = links.some(link => 
-                link.href && pattern.href.test(link.href)
+              const regex = new RegExp(pattern.href, 'i');
+              const foundLink = links.some(link =>
+                link.href && regex.test(link.href)
               );
               if (foundLink) {
                 detected = true;
@@ -57,11 +60,12 @@
                 matches.push('Link tag');
               }
             }
-            
+
             else if (pattern.type === 'meta') {
+              const regex = new RegExp(pattern.content, 'i');
               const foundMeta = metas.some(meta => {
                 if (meta.name && pattern.name && meta.name.toLowerCase() === pattern.name.toLowerCase()) {
-                  if (pattern.content.test(meta.content)) {
+                  if (meta.content && regex.test(meta.content)) {
                     // Try to extract version
                     const versionMatch = meta.content.match(/[\d]+\.[\d]+(?:\.[\d]+)?/);
                     if (versionMatch) {
@@ -78,13 +82,13 @@
                 matches.push('Meta tag');
               }
             }
-            
+
             else if (pattern.type === 'global') {
               if (typeof window[pattern.name] !== 'undefined') {
                 detected = true;
                 confidence += 40;
                 matches.push('Global variable');
-                
+
                 // Try to get version from global object
                 const global = window[pattern.name];
                 if (global && typeof global === 'object') {
@@ -96,12 +100,13 @@
                 }
               }
             }
-            
+
             else if (pattern.type === 'cookie') {
+              const regex = new RegExp(pattern.name, 'i');
               const cookies = document.cookie.split(';');
               const foundCookie = cookies.some(cookie => {
                 const cookieName = cookie.trim().split('=')[0];
-                return pattern.name.test(cookieName);
+                return regex.test(cookieName);
               });
               if (foundCookie) {
                 detected = true;
@@ -110,7 +115,7 @@
               }
             }
           } catch (e) {
-            console.error('Error detecting', techName, e);
+            console.error('Error detecting', techName, ':', e);
           }
         }
 

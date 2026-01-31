@@ -4,7 +4,6 @@
 
   let detectionData = {
     technologies: [],
-    headers: {},
     domain: window.location.hostname
   };
 
@@ -31,6 +30,9 @@
             type: 'DETECT_TECH',
             signatures: signatures
           }, '*');
+        })
+        .catch(err => {
+          console.error('Failed to load signatures:', err);
         });
     }
 
@@ -40,27 +42,11 @@
       chrome.runtime.sendMessage({
         type: 'TECH_RESULTS',
         data: detectionData
+      }).catch(err => {
+        console.error('Failed to send results to background:', err);
       });
     }
   });
-
-  // Fetch headers via background script
-  chrome.runtime.sendMessage({
-    type: 'GET_HEADERS',
-    url: window.location.href
-  }, function (response) {
-    if (response && response.headers) {
-      detectionData.headers = response.headers;
-
-      // Analyze headers for server technologies
-      analyzeHeaders(response.headers);
-    }
-  });
-
-  function analyzeHeaders(headers) {
-    // This will be handled by the background script
-    // and merged with the results
-  }
 
   // Listen for messages from popup
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
