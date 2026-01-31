@@ -51,6 +51,18 @@
 					{ "type": "meta", "name": "generator", "content": "Webflow" },
 					{ "type": "html", "content": "webflow" }
 				]
+			},
+			"Ghost": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Ghost" },
+					{ "type": "html", "content": "ghost" }
+				]
+			},
+			"Medium": {
+				"patterns": [
+					{ "type": "meta", "name": "al:android:app_name", "content": "Medium" },
+					{ "type": "html", "content": "medium\\.com" }
+				]
 			}
 		}
 	},
@@ -84,6 +96,48 @@
 					{ "type": "global", "name": "jQuery" }
 				]
 			},
+			"Svelte": {
+				"patterns": [
+					{ "type": "html", "content": "svelte-" },
+					{ "type": "global", "name": "svelte" }
+				]
+			},
+			"Ember.js": {
+				"patterns": [
+					{ "type": "script", "src": "ember" },
+					{ "type": "global", "name": "Ember" }
+				]
+			},
+			"Backbone.js": {
+				"patterns": [
+					{ "type": "script", "src": "backbone" },
+					{ "type": "global", "name": "Backbone" }
+				]
+			},
+			"Alpine.js": {
+				"patterns": [
+					{ "type": "script", "src": "alpinejs" },
+					{ "type": "global", "name": "Alpine" },
+					{ "type": "html", "content": "x-data|x-bind" }
+				]
+			},
+			"Preact": {
+				"patterns": [
+					{ "type": "script", "src": "preact" },
+					{ "type": "global", "name": "preact" }
+				]
+			},
+			"Lit": {
+				"patterns": [
+					{ "type": "script", "src": "lit-element|lit-html" },
+					{ "type": "global", "name": "lit" }
+				]
+			}
+		}
+	},
+	"static-site-generators": {
+		"icon": "🏗️",
+		"technologies": {
 			"Next.js": {
 				"patterns": [
 					{ "type": "script", "src": "_next/" },
@@ -97,16 +151,106 @@
 					{ "type": "global", "name": "__NUXT__" }
 				]
 			},
-			"Svelte": {
+			"Gatsby": {
 				"patterns": [
-					{ "type": "html", "content": "svelte-" },
-					{ "type": "global", "name": "svelte" }
+					{ "type": "script", "src": "gatsby" },
+					{ "type": "global", "name": "___gatsby" },
+					{ "type": "meta", "name": "generator", "content": "Gatsby" }
 				]
 			},
-			"Ember.js": {
+			"Hugo": {
 				"patterns": [
-					{ "type": "script", "src": "ember" },
-					{ "type": "global", "name": "Ember" }
+					{ "type": "meta", "name": "generator", "content": "Hugo" }
+				]
+			},
+			"Jekyll": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Jekyll" }
+				]
+			},
+			"Eleventy": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Eleventy|11ty" }
+				]
+			},
+			"Astro": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Astro" },
+					{ "type": "html", "content": "astro-" }
+				]
+			},
+			"VitePress": {
+				"patterns": [
+					{ "type": "script", "src": "vitepress" },
+					{ "type": "meta", "name": "generator", "content": "VitePress" }
+				]
+			},
+			"Docusaurus": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Docusaurus" },
+					{ "type": "script", "src": "docusaurus" }
+				]
+			}
+		}
+	},
+	"ui-frameworks": {
+		"icon": "🎭",
+		"technologies": {
+			"Material-UI": {
+				"patterns": [
+					{ "type": "script", "src": "@mui|material-ui" },
+					{ "type": "global", "name": "mui" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bMui" }
+				]
+			},
+			"Ant Design": {
+				"patterns": [
+					{ "type": "script", "src": "antd" },
+					{ "type": "link", "href": "antd" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bant-" }
+				]
+			},
+			"Chakra UI": {
+				"patterns": [
+					{ "type": "script", "src": "chakra-ui" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bchakra-" }
+				]
+			},
+			"Radix UI": {
+				"patterns": [
+					{ "type": "script", "src": "@radix-ui" },
+					{ "type": "html", "content": "data-radix-" }
+				]
+			},
+			"shadcn/ui": {
+				"patterns": [
+					{ "type": "html", "content": "class=\"[^\"]*\\b(cn\\(|shadcn)" }
+				]
+			},
+			"Semantic UI": {
+				"patterns": [
+					{ "type": "script", "src": "semantic" },
+					{ "type": "link", "href": "semantic" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bui " }
+				]
+			},
+			"Vuetify": {
+				"patterns": [
+					{ "type": "script", "src": "vuetify" },
+					{ "type": "link", "href": "vuetify" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bv-" }
+				]
+			},
+			"PrimeNG": {
+				"patterns": [
+					{ "type": "script", "src": "primeng" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bp-" }
+				]
+			},
+			"Mantine": {
+				"patterns": [
+					{ "type": "script", "src": "@mantine" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bmantine-" }
 				]
 			}
 		}
@@ -120,6 +264,13 @@
 					{ "type": "script", "src": "googletagmanager\\.com/gtag" },
 					{ "type": "global", "name": "ga" },
 					{ "type": "global", "name": "gtag" }
+				]
+			},
+			"Google Tag Manager": {
+				"patterns": [
+					{ "type": "script", "src": "googletagmanager\\.com/gtm\\.js" },
+					{ "type": "global", "name": "google_tag_manager" },
+					{ "type": "html", "content": "googletagmanager\\.com/ns\\.html" }
 				]
 			},
 			"Facebook Pixel": {
@@ -144,6 +295,54 @@
 				"patterns": [
 					{ "type": "script", "src": "2o7\\.net" },
 					{ "type": "global", "name": "s_gi" }
+				]
+			},
+			"Plausible": {
+				"patterns": [
+					{ "type": "script", "src": "plausible\\.io" }
+				]
+			},
+			"Matomo": {
+				"patterns": [
+					{ "type": "script", "src": "matomo" },
+					{ "type": "global", "name": "_paq" }
+				]
+			},
+			"Segment": {
+				"patterns": [
+					{ "type": "script", "src": "cdn\\.segment\\.com" },
+					{ "type": "global", "name": "analytics" }
+				]
+			},
+			"Amplitude": {
+				"patterns": [
+					{ "type": "script", "src": "amplitude" },
+					{ "type": "global", "name": "amplitude" }
+				]
+			}
+		}
+	},
+	"servers": {
+		"icon": "🖥️",
+		"technologies": {
+			"Nginx": {
+				"patterns": [
+					{ "type": "html", "content": "nginx" }
+				]
+			},
+			"Apache": {
+				"patterns": [
+					{ "type": "html", "content": "apache" }
+				]
+			},
+			"Microsoft IIS": {
+				"patterns": [
+					{ "type": "html", "content": "IIS" }
+				]
+			},
+			"LiteSpeed": {
+				"patterns": [
+					{ "type": "html", "content": "LiteSpeed" }
 				]
 			}
 		}
@@ -170,6 +369,18 @@
 					{ "type": "meta", "name": "generator", "content": "PrestaShop" },
 					{ "type": "global", "name": "prestashop" }
 				]
+			},
+			"BigCommerce": {
+				"patterns": [
+					{ "type": "script", "src": "bigcommerce" },
+					{ "type": "html", "content": "bigcommerce" }
+				]
+			},
+			"OpenCart": {
+				"patterns": [
+					{ "type": "cookie", "name": "OCSESSID" },
+					{ "type": "html", "content": "catalog/view/theme" }
+				]
 			}
 		}
 	},
@@ -190,6 +401,26 @@
 			"Fastly": {
 				"patterns": [
 					{ "type": "script", "src": "fastly\\.net" }
+				]
+			},
+			"Akamai": {
+				"patterns": [
+					{ "type": "script", "src": "akamai" }
+				]
+			},
+			"jsDelivr": {
+				"patterns": [
+					{ "type": "script", "src": "cdn\\.jsdelivr\\.net" }
+				]
+			},
+			"unpkg": {
+				"patterns": [
+					{ "type": "script", "src": "unpkg\\.com" }
+				]
+			},
+			"cdnjs": {
+				"patterns": [
+					{ "type": "script", "src": "cdnjs\\.cloudflare\\.com" }
 				]
 			}
 		}
@@ -214,6 +445,18 @@
 					{ "type": "script", "src": "squareup\\.com" },
 					{ "type": "global", "name": "Square" }
 				]
+			},
+			"Braintree": {
+				"patterns": [
+					{ "type": "script", "src": "braintreegateway\\.com" },
+					{ "type": "global", "name": "braintree" }
+				]
+			},
+			"Adyen": {
+				"patterns": [
+					{ "type": "script", "src": "adyen" },
+					{ "type": "global", "name": "adyen" }
+				]
 			}
 		}
 	},
@@ -224,12 +467,13 @@
 				"patterns": [
 					{ "type": "script", "src": "bootstrap" },
 					{ "type": "link", "href": "bootstrap" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bbootstrap" }
+					{ "type": "html", "content": "class=\"[^\"]*\\b(container|row|col-)" }
 				]
 			},
 			"Tailwind CSS": {
 				"patterns": [
 					{ "type": "link", "href": "tailwind" },
+					{ "type": "script", "src": "tailwind" },
 					{ "type": "html", "content": "class=\"[^\"]*\\b(flex|grid|m-|p-|text-|bg-)" }
 				]
 			},
@@ -242,7 +486,19 @@
 			"Bulma": {
 				"patterns": [
 					{ "type": "link", "href": "bulma" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bcolumn" }
+					{ "type": "html", "content": "class=\"[^\"]*\\b(column|columns)" }
+				]
+			},
+			"Materialize": {
+				"patterns": [
+					{ "type": "script", "src": "materialize" },
+					{ "type": "link", "href": "materialize" }
+				]
+			},
+			"Pure CSS": {
+				"patterns": [
+					{ "type": "link", "href": "pure-min\\.css" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bpure-" }
 				]
 			}
 		}
@@ -264,6 +520,24 @@
 			"Python": {
 				"patterns": [
 					{ "type": "html", "content": "\\.py" }
+				]
+			},
+			"Ruby": {
+				"patterns": [
+					{ "type": "html", "content": "\\.rb" }
+				]
+			},
+			"ASP.NET": {
+				"patterns": [
+					{ "type": "html", "content": "\\.aspx" },
+					{ "type": "cookie", "name": "ASP\\.NET_SessionId" },
+					{ "type": "global", "name": "__doPostBack" }
+				]
+			},
+			"Java": {
+				"patterns": [
+					{ "type": "html", "content": "\\.jsp|\\.jsf" },
+					{ "type": "cookie", "name": "JSESSIONID" }
 				]
 			}
 		}
@@ -287,6 +561,294 @@
 				"patterns": [
 					{ "type": "script", "src": "widget\\.intercom\\.io" },
 					{ "type": "global", "name": "Intercom" }
+				]
+			},
+			"Drift": {
+				"patterns": [
+					{ "type": "script", "src": "js\\.driftt\\.com" },
+					{ "type": "global", "name": "drift" }
+				]
+			},
+			"Zendesk": {
+				"patterns": [
+					{ "type": "script", "src": "static\\.zdassets\\.com" },
+					{ "type": "global", "name": "zE" }
+				]
+			},
+			"Crisp": {
+				"patterns": [
+					{ "type": "script", "src": "client\\.crisp\\.chat" },
+					{ "type": "global", "name": "$crisp" }
+				]
+			},
+			"Tawk.to": {
+				"patterns": [
+					{ "type": "script", "src": "embed\\.tawk\\.to" },
+					{ "type": "global", "name": "Tawk_API" }
+				]
+			}
+		}
+	},
+	"hosting": {
+		"icon": "☁️",
+		"technologies": {
+			"Vercel": {
+				"patterns": [
+					{ "type": "html", "content": "vercel" }
+				]
+			},
+			"Netlify": {
+				"patterns": [
+					{ "type": "html", "content": "netlify" }
+				]
+			},
+			"GitHub Pages": {
+				"patterns": [
+					{ "type": "html", "content": "github\\.io" }
+				]
+			},
+			"Cloudflare Pages": {
+				"patterns": [
+					{ "type": "html", "content": "pages\\.dev" }
+				]
+			},
+			"Firebase": {
+				"patterns": [
+					{ "type": "script", "src": "firebase" },
+					{ "type": "global", "name": "firebase" }
+				]
+			},
+			"AWS": {
+				"patterns": [
+					{ "type": "script", "src": "amazonaws\\.com" }
+				]
+			}
+		}
+	},
+	"fonts": {
+		"icon": "🔤",
+		"technologies": {
+			"Google Fonts": {
+				"patterns": [
+					{ "type": "link", "href": "fonts\\.googleapis\\.com" }
+				]
+			},
+			"Font Awesome": {
+				"patterns": [
+					{ "type": "link", "href": "font-awesome|fontawesome" },
+					{ "type": "script", "src": "font-awesome|fontawesome" },
+					{ "type": "html", "content": "class=\"[^\"]*\\bfa-" }
+				]
+			},
+			"Adobe Fonts": {
+				"patterns": [
+					{ "type": "link", "href": "use\\.typekit\\.net" }
+				]
+			}
+		}
+	},
+	"maps": {
+		"icon": "🗺️",
+		"technologies": {
+			"Google Maps": {
+				"patterns": [
+					{ "type": "script", "src": "maps\\.googleapis\\.com" },
+					{ "type": "global", "name": "google.maps" }
+				]
+			},
+			"Mapbox": {
+				"patterns": [
+					{ "type": "script", "src": "mapbox" },
+					{ "type": "global", "name": "mapboxgl" }
+				]
+			},
+			"Leaflet": {
+				"patterns": [
+					{ "type": "script", "src": "leaflet" },
+					{ "type": "global", "name": "L" }
+				]
+			}
+		}
+	},
+	"video": {
+		"icon": "🎥",
+		"technologies": {
+			"YouTube": {
+				"patterns": [
+					{ "type": "script", "src": "youtube\\.com" },
+					{ "type": "html", "content": "youtube\\.com/embed" }
+				]
+			},
+			"Vimeo": {
+				"patterns": [
+					{ "type": "script", "src": "player\\.vimeo\\.com" },
+					{ "type": "html", "content": "vimeo\\.com" }
+				]
+			},
+			"Wistia": {
+				"patterns": [
+					{ "type": "script", "src": "fast\\.wistia" },
+					{ "type": "global", "name": "Wistia" }
+				]
+			},
+			"Video.js": {
+				"patterns": [
+					{ "type": "script", "src": "video\\.js" },
+					{ "type": "global", "name": "videojs" }
+				]
+			}
+		}
+	},
+	"miscellaneous": {
+		"icon": "🔧",
+		"technologies": {
+			"webpack": {
+				"patterns": [
+					{ "type": "script", "src": "webpack" },
+					{ "type": "global", "name": "webpackJsonp" }
+				]
+			},
+			"Vite": {
+				"patterns": [
+					{ "type": "script", "src": "vite|@vite" },
+					{ "type": "html", "content": "vite" }
+				]
+			},
+			"Parcel": {
+				"patterns": [
+					{ "type": "script", "src": "parcel" }
+				]
+			},
+			"Turbo": {
+				"patterns": [
+					{ "type": "script", "src": "turbo" },
+					{ "type": "global", "name": "Turbo" }
+				]
+			},
+			"htmx": {
+				"patterns": [
+					{ "type": "script", "src": "htmx" },
+					{ "type": "html", "content": "hx-" }
+				]
+			},
+			"Socket.io": {
+				"patterns": [
+					{ "type": "script", "src": "socket\\.io" },
+					{ "type": "global", "name": "io" }
+				]
+			},
+			"Three.js": {
+				"patterns": [
+					{ "type": "script", "src": "three" },
+					{ "type": "global", "name": "THREE" }
+				]
+			},
+			"D3.js": {
+				"patterns": [
+					{ "type": "script", "src": "d3(\\.min)?\\.js" },
+					{ "type": "global", "name": "d3" }
+				]
+			},
+			"Chart.js": {
+				"patterns": [
+					{ "type": "script", "src": "chart\\.js" },
+					{ "type": "global", "name": "Chart" }
+				]
+			},
+			"Lodash": {
+				"patterns": [
+					{ "type": "script", "src": "lodash" },
+					{ "type": "global", "name": "_" }
+				]
+			},
+			"Axios": {
+				"patterns": [
+					{ "type": "script", "src": "axios" },
+					{ "type": "global", "name": "axios" }
+				]
+			},
+			"Day.js": {
+				"patterns": [
+					{ "type": "script", "src": "dayjs" },
+					{ "type": "global", "name": "dayjs" }
+				]
+			},
+			"Moment.js": {
+				"patterns": [
+					{ "type": "script", "src": "moment" },
+					{ "type": "global", "name": "moment" }
+				]
+			}
+		}
+	},
+	"security": {
+		"icon": "🔒",
+		"technologies": {
+			"reCAPTCHA": {
+				"patterns": [
+					{ "type": "script", "src": "recaptcha" },
+					{ "type": "global", "name": "grecaptcha" }
+				]
+			},
+			"hCaptcha": {
+				"patterns": [
+					{ "type": "script", "src": "hcaptcha" },
+					{ "type": "global", "name": "hcaptcha" }
+				]
+			},
+			"Cloudflare Turnstile": {
+				"patterns": [
+					{ "type": "script", "src": "challenges\\.cloudflare\\.com" }
+				]
+			}
+		}
+	},
+	"rum": {
+		"icon": "⚡",
+		"technologies": {
+			"Cloudflare Browser Insights": {
+				"patterns": [
+					{ "type": "script", "src": "cloudflareinsights\\.com" }
+				]
+			},
+			"New Relic": {
+				"patterns": [
+					{ "type": "script", "src": "newrelic\\.com" },
+					{ "type": "global", "name": "NREUM" }
+				]
+			},
+			"Sentry": {
+				"patterns": [
+					{ "type": "script", "src": "sentry" },
+					{ "type": "global", "name": "Sentry" }
+				]
+			},
+			"Datadog": {
+				"patterns": [
+					{ "type": "script", "src": "datadoghq" },
+					{ "type": "global", "name": "DD_RUM" }
+				]
+			}
+		}
+	},
+	"ab-testing": {
+		"icon": "🧪",
+		"technologies": {
+			"Optimizely": {
+				"patterns": [
+					{ "type": "script", "src": "optimizely" },
+					{ "type": "global", "name": "optimizely" }
+				]
+			},
+			"Google Optimize": {
+				"patterns": [
+					{ "type": "script", "src": "google-analytics\\.com/.*optimize" }
+				]
+			},
+			"VWO": {
+				"patterns": [
+					{ "type": "script", "src": "visualwebsiteoptimizer" },
+					{ "type": "global", "name": "_vwo_code" }
 				]
 			}
 		}

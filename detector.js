@@ -93,9 +93,12 @@
                 const global = window[pattern.name];
                 if (global && typeof global === 'object') {
                   if (global.version) {
-                    version = global.version;
+                    version = String(global.version);
                   } else if (global.VERSION) {
-                    version = global.VERSION;
+                    version = String(global.VERSION);
+                  } else if (global.fn && global.fn.jquery) {
+                    // Special case for jQuery
+                    version = String(global.fn.jquery);
                   }
                 }
               }
@@ -122,7 +125,12 @@
         if (detected) {
           // Cap confidence at 100
           confidence = Math.min(confidence, 100);
-          
+
+          // Clean up version string
+          if (version && typeof version === 'string') {
+            version = version.replace(/^v/, '').trim();
+          }
+
           detectedTechs.push({
             name: techName,
             category: category,
