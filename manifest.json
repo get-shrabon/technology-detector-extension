@@ -3,7 +3,7 @@
 	"name": "Technologies Detector",
 	"version": "1.0.0",
 	"description": "Detect technologies, frameworks, and tools used on any website",
-	"permissions": ["activeTab", "scripting", "storage", "webRequest"],
+	"permissions": ["activeTab", "scripting", "storage"],
 	"host_permissions": ["<all_urls>"],
 	"action": {
 		"default_popup": "popup.html",
@@ -30,7 +30,7 @@
 	},
 	"web_accessible_resources": [
 		{
-			"resources": ["detector.js", "signatures.js"],
+			"resources": ["detector.js", "signatures.js", "signatures.json"],
 			"matches": ["<all_urls>"]
 		}
 	]
