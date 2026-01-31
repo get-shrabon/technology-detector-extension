@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEl = document.getElementById('error');
   const resultsEl = document.getElementById('results');
   const domainEl = document.getElementById('domain');
-  const techListEl = document.getElementById('tech-list');
-  const searchInput = document.getElementById('search');
+  const techGridEl = document.getElementById('tech-grid');
   const exportBtn = document.getElementById('export-btn');
   const totalCountEl = document.getElementById('total-count');
   const categoryCountEl = document.getElementById('category-count');
@@ -16,25 +15,28 @@ document.addEventListener('DOMContentLoaded', function() {
   // Category icons mapping
   const categoryIcons = {
     cms: '📝',
+    'page-builder': '🏗️',
+    'wordpress-plugins': '🔌',
+    seo: '🎯',
+    'javascript-libraries': '📚',
     frameworks: '⚛️',
-    'static-site-generators': '🏗️',
+    'static-site-generators': '🚀',
     'ui-frameworks': '🎭',
     analytics: '📊',
-    servers: '🖥️',
-    languages: '💻',
+    'web-servers': '🖥️',
+    'programming-languages': '💻',
     ecommerce: '🛒',
     cdn: '🌐',
+    css: '🎨',
+    fonts: '🔤',
+    'tag-managers': '🏷️',
+    databases: '🗄️',
+    blogs: '✍️',
+    miscellaneous: '🔧',
+    rum: '⚡',
     payment: '💳',
     marketing: '📢',
-    css: '🎨',
-    hosting: '☁️',
-    fonts: '🔤',
-    maps: '🗺️',
-    video: '🎥',
-    miscellaneous: '🔧',
-    security: '🔒',
-    rum: '⚡',
-    'ab-testing': '🧪'
+    security: '🔒'
   };
 
   // Get current tab and request data
@@ -98,24 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTechnologies(technologies);
   }
 
-  function renderTechnologies(technologies, searchTerm = '') {
-    techListEl.innerHTML = '';
+  function renderTechnologies(technologies) {
+    techGridEl.innerHTML = '';
 
-    // Filter technologies
-    let filtered = technologies;
-    if (searchTerm) {
-      filtered = technologies.filter(tech => 
-        tech.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    if (filtered.length === 0) {
-      techListEl.innerHTML = `
+    if (technologies.length === 0) {
+      techGridEl.innerHTML = `
         <div class="no-results">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
           <p>No technologies found</p>
         </div>
       `;
@@ -123,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Group by category
-    const grouped = filtered.reduce((acc, tech) => {
+    const grouped = technologies.reduce((acc, tech) => {
       if (!acc[tech.category]) {
         acc[tech.category] = [];
       }
@@ -133,55 +123,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Render each category
     for (const [category, techs] of Object.entries(grouped)) {
-      const categoryEl = document.createElement('div');
-      categoryEl.className = 'category';
+      const categorySection = document.createElement('div');
+      categorySection.className = 'category-section';
 
       // Format category name (handle hyphenated names)
       const categoryName = category
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
-      const categoryIcon = categoryIcons[category] || '🔧';
-
-      categoryEl.innerHTML = `
-        <div class="category-header">
-          <span class="category-icon">${categoryIcon}</span>
-          <span class="category-title">${categoryName}</span>
-          <span class="category-badge">${techs.length}</span>
-        </div>
-      `;
 
       // Sort by confidence
       techs.sort((a, b) => b.confidence - a.confidence);
+
+      // Create category header
+      const header = document.createElement('div');
+      header.className = 'category-header';
+      header.innerHTML = `
+        <span class="category-name">${categoryName}</span>
+        <span class="category-badge">${techs.length}</span>
+      `;
+      categorySection.appendChild(header);
+
+      // Create tech items container
+      const techItems = document.createElement('div');
+      techItems.className = 'tech-items';
 
       // Add technologies
       techs.forEach(tech => {
         const techEl = document.createElement('div');
         techEl.className = 'tech-item';
 
-        const confidenceClass = 
-          tech.confidence >= 70 ? 'confidence-high' :
-          tech.confidence >= 40 ? 'confidence-medium' : 'confidence-low';
+        const confidenceClass =
+          tech.confidence >= 70 ? 'high' :
+          tech.confidence >= 40 ? 'medium' : 'low';
 
-        const confidenceText = 
+        const confidenceText =
           tech.confidence >= 70 ? 'High' :
           tech.confidence >= 40 ? 'Medium' : 'Low';
 
-        const versionText = tech.version ? `v${tech.version}` : 'Version unknown';
+        const versionText = tech.version ? `Version ${tech.version}` : 'Version unknown';
 
         techEl.innerHTML = `
           <div class="tech-icon">${getTechIcon(tech.name)}</div>
           <div class="tech-info">
-            <div class="tech-name">${tech.name}</div>
+            <span class="tech-name">${tech.name}</span>
             <div class="tech-version">${versionText}</div>
           </div>
           <div class="tech-confidence ${confidenceClass}">${confidenceText}</div>
         `;
 
-        categoryEl.appendChild(techEl);
+        techItems.appendChild(techEl);
       });
 
-      techListEl.appendChild(categoryEl);
+      categorySection.appendChild(techItems);
+      techGridEl.appendChild(categorySection);
     }
   }
 
@@ -196,19 +191,66 @@ document.addEventListener('DOMContentLoaded', function() {
       'Squarespace': '⬛',
       'Webflow': '🌊',
       'Ghost': '👻',
-      'Medium': '📖',
+
+      // Page Builders
+      'Elementor': '🏗️',
+      'WPBakery Page Builder': '🏗️',
+      'Beaver Builder': '🦫',
+      'Divi Builder': '🎨',
+      'Oxygen Builder': '⚙️',
+      'Gutenberg': '📝',
+
+      // WordPress Plugins
+      'Yoast SEO': '🎯',
+      'All in One SEO Pack': '🎯',
+      'Rank Math': '📊',
+      'Contact Form 7': '📧',
+      'WPForms': '📝',
+      'Gravity Forms': '📋',
+      'Redux Framework': '🔧',
+      'Advanced Custom Fields': '🔧',
+      'WP Rocket': '🚀',
+      'W3 Total Cache': '⚡',
+      'Slider Revolution': '🎠',
+      'MonsterInsights': '📊',
+      'Really Simple SSL': '🔒',
+      'Wordfence': '🛡️',
+
+      // SEO
+      'SEOPress': '🎯',
+
+      // JavaScript Libraries
+      'jQuery': '🔷',
+      'jQuery Migrate': '🔷',
+      'jQuery UI': '🎨',
+      'Swiper': '🎠',
+      'Slick': '🎠',
+      'Select2': '📋',
+      'Packery': '🧱',
+      'OWL Carousel': '🦉',
+      'Modernizr': '🔍',
+      'Underscore.js': '_',
+      'GSAP': '⚡',
+      'Hammer.js': '🔨',
+      'Anime.js': '✨',
+      'Isotope': '🧱',
+      'Masonry': '🧱',
+      'Lightbox': '💡',
+      'Fancybox': '📦',
+      'Magnific Popup': '🔍',
+      'AOS': '✨',
+      'WOW.js': '🎆',
+      'Parallax.js': '🌊',
 
       // Frameworks
       'React': '⚛️',
       'Vue.js': '💚',
       'Angular': '🅰️',
-      'jQuery': '🔷',
       'Svelte': '🔥',
       'Ember.js': '🐹',
       'Backbone.js': '🦴',
       'Alpine.js': '🏔️',
       'Preact': '💜',
-      'Lit': '💡',
 
       // Static Site Generators
       'Next.js': '▲',
@@ -218,8 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'Jekyll': '🧪',
       'Eleventy': '🎈',
       'Astro': '🚀',
-      'VitePress': '⚡',
-      'Docusaurus': '🦖',
 
       // UI Frameworks
       'Material-UI': '🎨',
@@ -228,32 +268,27 @@ document.addEventListener('DOMContentLoaded', function() {
       'Radix UI': '🎯',
       'shadcn/ui': '🎭',
       'Semantic UI': '📱',
-      'Vuetify': '💎',
-      'PrimeNG': '🎲',
-      'Mantine': '🎨',
 
       // Analytics
       'Google Analytics': '📈',
       'Google Tag Manager': '🏷️',
       'Facebook Pixel': '👁️',
+      'Cloudflare Browser Insights': '☁️',
       'Hotjar': '🔥',
       'Mixpanel': '📊',
-      'Adobe Analytics': '📉',
       'Plausible': '📈',
       'Matomo': '📊',
-      'Segment': '🔀',
-      'Amplitude': '📡',
 
-      // Servers
+      // Web Servers
       'Nginx': '🟢',
       'Apache': '🪶',
-      'Microsoft IIS': '🔷',
       'LiteSpeed': '⚡',
+      'Microsoft IIS': '🔷',
 
-      // Languages
+      // Programming Languages
       'PHP': '🐘',
-      'Python': '🐍',
       'Node.js': '🟩',
+      'Python': '🐍',
       'Ruby': '💎',
       'ASP.NET': '🔷',
       'Java': '☕',
@@ -263,95 +298,62 @@ document.addEventListener('DOMContentLoaded', function() {
       'Magento': '🛍️',
       'PrestaShop': '🛒',
       'BigCommerce': '🏪',
-      'OpenCart': '🛒',
 
       // CDN
       'Cloudflare': '☁️',
       'Amazon CloudFront': '📦',
-      'Fastly': '⚡',
-      'Akamai': '🌐',
       'jsDelivr': '📦',
       'unpkg': '📦',
       'cdnjs': '📦',
 
-      // Payment
-      'Stripe': '💳',
-      'PayPal': '💰',
-      'Square': '⬛',
-      'Braintree': '🌳',
-      'Adyen': '💳',
-
       // CSS
       'Bootstrap': '🅱️',
       'Tailwind CSS': '🎨',
-      'Foundation': '🏗️',
       'Bulma': '🎯',
-      'Materialize': '📱',
-      'Pure CSS': '💧',
-
-      // Marketing
-      'Mailchimp': '📧',
-      'HubSpot': '🔶',
-      'Intercom': '💬',
-      'Drift': '🚀',
-      'Zendesk': '💬',
-      'Crisp': '💬',
-      'Tawk.to': '💬',
-
-      // Hosting
-      'Vercel': '▲',
-      'Netlify': '💎',
-      'GitHub Pages': '📄',
-      'Cloudflare Pages': '☁️',
-      'Firebase': '🔥',
-      'AWS': '☁️',
+      'Foundation': '🏗️',
 
       // Fonts
       'Google Fonts': '🔤',
       'Font Awesome': '⭐',
       'Adobe Fonts': '🎨',
 
-      // Maps
-      'Google Maps': '🗺️',
-      'Mapbox': '🗺️',
-      'Leaflet': '🍃',
+      // Tag Managers
+      'Tealium': '🏷️',
+      'Adobe Tag Manager': '🏷️',
 
-      // Video
-      'YouTube': '📺',
-      'Vimeo': '🎬',
-      'Wistia': '📹',
-      'Video.js': '🎥',
+      // Databases
+      'MySQL': '🗄️',
+      'PostgreSQL': '🐘',
+      'MongoDB': '🍃',
+      'Redis': '📦',
+
+      // Blogs
+      'Medium': '📖',
+      'Blogger': '📝',
 
       // Miscellaneous
+      'HTTP/3': '⚡',
       'webpack': '📦',
       'Vite': '⚡',
       'Parcel': '📦',
-      'Turbo': '🚄',
-      'htmx': '⚡',
-      'Socket.io': '🔌',
-      'Three.js': '🎮',
-      'D3.js': '📊',
-      'Chart.js': '📊',
-      'Lodash': '🔧',
-      'Axios': '🔄',
-      'Day.js': '📅',
-      'Moment.js': '📅',
+
+      // RUM
+      'New Relic': '📊',
+      'Sentry': '🐛',
+
+      // Payment
+      'Stripe': '💳',
+      'PayPal': '💰',
+      'Square': '⬛',
+
+      // Marketing
+      'Mailchimp': '📧',
+      'HubSpot': '🔶',
+      'Intercom': '💬',
 
       // Security
       'reCAPTCHA': '🔒',
-      'hCaptcha': '🔒',
-      'Cloudflare Turnstile': '🔒',
-
-      // RUM
-      'Cloudflare Browser Insights': '⚡',
-      'New Relic': '📊',
-      'Sentry': '🐛',
-      'Datadog': '🐕',
-
-      // A/B Testing
-      'Optimizely': '🧪',
-      'Google Optimize': '🧪',
-      'VWO': '🧪'
+      'hCaptcha': '🔒'
     };
     return icons[name] || '🔧';
   }
@@ -361,11 +363,6 @@ document.addEventListener('DOMContentLoaded', function() {
     errorEl.style.display = 'flex';
     document.getElementById('error-message').textContent = message;
   }
-
-  // Search functionality
-  searchInput.addEventListener('input', function(e) {
-    renderTechnologies(allTechnologies, e.target.value);
-  });
 
   // Export functionality
   exportBtn.addEventListener('click', function() {
