@@ -57,11 +57,302 @@
 					{ "type": "meta", "name": "generator", "content": "Ghost" },
 					{ "type": "html", "content": "ghost" }
 				]
-			},
-			"Medium": {
+			}
+		}
+	},
+	"page-builder": {
+		"icon": "🏗️",
+		"technologies": {
+			"Elementor": {
 				"patterns": [
-					{ "type": "meta", "name": "al:android:app_name", "content": "Medium" },
-					{ "type": "html", "content": "medium\\.com" }
+					{ "type": "script", "src": "elementor" },
+					{ "type": "link", "href": "elementor" },
+					{ "type": "html", "content": "elementor" },
+					{ "type": "global", "name": "elementorFrontend" }
+				]
+			},
+			"WPBakery Page Builder": {
+				"patterns": [
+					{ "type": "script", "src": "js_composer" },
+					{ "type": "link", "href": "js_composer" },
+					{ "type": "html", "content": "wpb_" }
+				]
+			},
+			"Beaver Builder": {
+				"patterns": [
+					{ "type": "script", "src": "bb-plugin" },
+					{ "type": "link", "href": "bb-plugin" },
+					{ "type": "html", "content": "fl-builder" }
+				]
+			},
+			"Divi Builder": {
+				"patterns": [
+					{ "type": "script", "src": "divi" },
+					{ "type": "link", "href": "divi" },
+					{ "type": "html", "content": "et_pb_" }
+				]
+			},
+			"Oxygen Builder": {
+				"patterns": [
+					{ "type": "script", "src": "oxygen" },
+					{ "type": "html", "content": "ct-section" }
+				]
+			},
+			"Gutenberg": {
+				"patterns": [
+					{ "type": "html", "content": "wp-block-" },
+					{ "type": "global", "name": "wp.blocks" }
+				]
+			}
+		}
+	},
+	"wordpress-plugins": {
+		"icon": "🔌",
+		"technologies": {
+			"Yoast SEO": {
+				"patterns": [
+					{ "type": "script", "src": "yoast" },
+					{ "type": "html", "content": "yoast" },
+					{ "type": "meta", "name": "generator", "content": "Yoast SEO" }
+				]
+			},
+			"All in One SEO Pack": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "All in One SEO" },
+					{ "type": "html", "content": "aioseop" }
+				]
+			},
+			"Rank Math": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Rank Math" },
+					{ "type": "script", "src": "rank-math" }
+				]
+			},
+			"Contact Form 7": {
+				"patterns": [
+					{ "type": "script", "src": "contact-form-7" },
+					{ "type": "html", "content": "wpcf7" }
+				]
+			},
+			"WPForms": {
+				"patterns": [
+					{ "type": "script", "src": "wpforms" },
+					{ "type": "html", "content": "wpforms" }
+				]
+			},
+			"Gravity Forms": {
+				"patterns": [
+					{ "type": "script", "src": "gravity" },
+					{ "type": "html", "content": "gform" }
+				]
+			},
+			"Redux Framework": {
+				"patterns": [
+					{ "type": "script", "src": "redux-framework" },
+					{ "type": "global", "name": "redux" }
+				]
+			},
+			"Advanced Custom Fields": {
+				"patterns": [
+					{ "type": "script", "src": "acf" },
+					{ "type": "html", "content": "acf-" }
+				]
+			},
+			"WP Rocket": {
+				"patterns": [
+					{ "type": "html", "content": "wp-rocket" },
+					{ "type": "script", "src": "wp-rocket" }
+				]
+			},
+			"W3 Total Cache": {
+				"patterns": [
+					{ "type": "html", "content": "w3tc" }
+				]
+			},
+			"Slider Revolution": {
+				"patterns": [
+					{ "type": "script", "src": "revslider" },
+					{ "type": "html", "content": "rev_slider" }
+				]
+			},
+			"MonsterInsights": {
+				"patterns": [
+					{ "type": "script", "src": "monsterinsights" }
+				]
+			},
+			"Really Simple SSL": {
+				"patterns": [
+					{ "type": "script", "src": "really-simple-ssl" }
+				]
+			},
+			"Wordfence": {
+				"patterns": [
+					{ "type": "script", "src": "wordfence" }
+				]
+			}
+		}
+	},
+	"seo": {
+		"icon": "🎯",
+		"technologies": {
+			"Yoast SEO": {
+				"patterns": [
+					{ "type": "script", "src": "yoast" },
+					{ "type": "html", "content": "yoast" },
+					{ "type": "meta", "name": "generator", "content": "Yoast SEO" }
+				]
+			},
+			"All in One SEO Pack": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "All in One SEO" },
+					{ "type": "html", "content": "aioseop" }
+				]
+			},
+			"Rank Math": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Rank Math" },
+					{ "type": "script", "src": "rank-math" }
+				]
+			},
+			"SEOPress": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "SEOPress" }
+				]
+			}
+		}
+	},
+	"javascript-libraries": {
+		"icon": "📚",
+		"technologies": {
+			"jQuery": {
+				"patterns": [
+					{ "type": "script", "src": "jquery" },
+					{ "type": "global", "name": "jQuery" }
+				]
+			},
+			"jQuery Migrate": {
+				"patterns": [
+					{ "type": "script", "src": "jquery-migrate" },
+					{ "type": "global", "name": "jQuery.migrateWarnings" }
+				]
+			},
+			"jQuery UI": {
+				"patterns": [
+					{ "type": "script", "src": "jquery-ui" },
+					{ "type": "global", "name": "jQuery.ui" }
+				]
+			},
+			"Swiper": {
+				"patterns": [
+					{ "type": "script", "src": "swiper" },
+					{ "type": "global", "name": "Swiper" },
+					{ "type": "html", "content": "swiper-" }
+				]
+			},
+			"Slick": {
+				"patterns": [
+					{ "type": "script", "src": "slick" },
+					{ "type": "global", "name": "Slick" },
+					{ "type": "html", "content": "slick-" }
+				]
+			},
+			"Select2": {
+				"patterns": [
+					{ "type": "script", "src": "select2" },
+					{ "type": "global", "name": "Select2" },
+					{ "type": "html", "content": "select2-" }
+				]
+			},
+			"Packery": {
+				"patterns": [
+					{ "type": "script", "src": "packery" },
+					{ "type": "global", "name": "Packery" }
+				]
+			},
+			"OWL Carousel": {
+				"patterns": [
+					{ "type": "script", "src": "owl\\.carousel" },
+					{ "type": "global", "name": "owlCarousel" },
+					{ "type": "html", "content": "owl-carousel" }
+				]
+			},
+			"Modernizr": {
+				"patterns": [
+					{ "type": "script", "src": "modernizr" },
+					{ "type": "global", "name": "Modernizr" }
+				]
+			},
+			"Underscore.js": {
+				"patterns": [
+					{ "type": "script", "src": "underscore" },
+					{ "type": "global", "name": "_" }
+				]
+			},
+			"GSAP": {
+				"patterns": [
+					{ "type": "script", "src": "gsap" },
+					{ "type": "global", "name": "gsap" }
+				]
+			},
+			"Hammer.js": {
+				"patterns": [
+					{ "type": "script", "src": "hammer" },
+					{ "type": "global", "name": "Hammer" }
+				]
+			},
+			"Anime.js": {
+				"patterns": [
+					{ "type": "script", "src": "anime" },
+					{ "type": "global", "name": "anime" }
+				]
+			},
+			"Isotope": {
+				"patterns": [
+					{ "type": "script", "src": "isotope" },
+					{ "type": "global", "name": "Isotope" }
+				]
+			},
+			"Masonry": {
+				"patterns": [
+					{ "type": "script", "src": "masonry" },
+					{ "type": "global", "name": "Masonry" }
+				]
+			},
+			"Lightbox": {
+				"patterns": [
+					{ "type": "script", "src": "lightbox" },
+					{ "type": "global", "name": "lightbox" }
+				]
+			},
+			"Fancybox": {
+				"patterns": [
+					{ "type": "script", "src": "fancybox" },
+					{ "type": "global", "name": "fancybox" }
+				]
+			},
+			"Magnific Popup": {
+				"patterns": [
+					{ "type": "script", "src": "magnific-popup" },
+					{ "type": "global", "name": "magnificPopup" }
+				]
+			},
+			"AOS": {
+				"patterns": [
+					{ "type": "script", "src": "aos" },
+					{ "type": "global", "name": "AOS" },
+					{ "type": "html", "content": "data-aos" }
+				]
+			},
+			"WOW.js": {
+				"patterns": [
+					{ "type": "script", "src": "wow" },
+					{ "type": "global", "name": "WOW" }
+				]
+			},
+			"Parallax.js": {
+				"patterns": [
+					{ "type": "script", "src": "parallax" },
+					{ "type": "global", "name": "Parallax" }
 				]
 			}
 		}
@@ -88,12 +379,6 @@
 					{ "type": "script", "src": "angular(\\.min)?\\.js" },
 					{ "type": "global", "name": "angular" },
 					{ "type": "html", "content": "ng-app|ng-controller|ng-bind" }
-				]
-			},
-			"jQuery": {
-				"patterns": [
-					{ "type": "script", "src": "jquery" },
-					{ "type": "global", "name": "jQuery" }
 				]
 			},
 			"Svelte": {
@@ -126,17 +411,11 @@
 					{ "type": "script", "src": "preact" },
 					{ "type": "global", "name": "preact" }
 				]
-			},
-			"Lit": {
-				"patterns": [
-					{ "type": "script", "src": "lit-element|lit-html" },
-					{ "type": "global", "name": "lit" }
-				]
 			}
 		}
 	},
 	"static-site-generators": {
-		"icon": "🏗️",
+		"icon": "🚀",
 		"technologies": {
 			"Next.js": {
 				"patterns": [
@@ -178,18 +457,6 @@
 					{ "type": "meta", "name": "generator", "content": "Astro" },
 					{ "type": "html", "content": "astro-" }
 				]
-			},
-			"VitePress": {
-				"patterns": [
-					{ "type": "script", "src": "vitepress" },
-					{ "type": "meta", "name": "generator", "content": "VitePress" }
-				]
-			},
-			"Docusaurus": {
-				"patterns": [
-					{ "type": "meta", "name": "generator", "content": "Docusaurus" },
-					{ "type": "script", "src": "docusaurus" }
-				]
 			}
 		}
 	},
@@ -230,27 +497,7 @@
 			"Semantic UI": {
 				"patterns": [
 					{ "type": "script", "src": "semantic" },
-					{ "type": "link", "href": "semantic" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bui " }
-				]
-			},
-			"Vuetify": {
-				"patterns": [
-					{ "type": "script", "src": "vuetify" },
-					{ "type": "link", "href": "vuetify" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bv-" }
-				]
-			},
-			"PrimeNG": {
-				"patterns": [
-					{ "type": "script", "src": "primeng" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bp-" }
-				]
-			},
-			"Mantine": {
-				"patterns": [
-					{ "type": "script", "src": "@mantine" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bmantine-" }
+					{ "type": "link", "href": "semantic" }
 				]
 			}
 		}
@@ -279,6 +526,11 @@
 					{ "type": "global", "name": "fbq" }
 				]
 			},
+			"Cloudflare Browser Insights": {
+				"patterns": [
+					{ "type": "script", "src": "cloudflareinsights\\.com" }
+				]
+			},
 			"Hotjar": {
 				"patterns": [
 					{ "type": "script", "src": "static\\.hotjar\\.com" },
@@ -291,12 +543,6 @@
 					{ "type": "global", "name": "mixpanel" }
 				]
 			},
-			"Adobe Analytics": {
-				"patterns": [
-					{ "type": "script", "src": "2o7\\.net" },
-					{ "type": "global", "name": "s_gi" }
-				]
-			},
 			"Plausible": {
 				"patterns": [
 					{ "type": "script", "src": "plausible\\.io" }
@@ -307,22 +553,10 @@
 					{ "type": "script", "src": "matomo" },
 					{ "type": "global", "name": "_paq" }
 				]
-			},
-			"Segment": {
-				"patterns": [
-					{ "type": "script", "src": "cdn\\.segment\\.com" },
-					{ "type": "global", "name": "analytics" }
-				]
-			},
-			"Amplitude": {
-				"patterns": [
-					{ "type": "script", "src": "amplitude" },
-					{ "type": "global", "name": "amplitude" }
-				]
 			}
 		}
 	},
-	"servers": {
+	"web-servers": {
 		"icon": "🖥️",
 		"technologies": {
 			"Nginx": {
@@ -335,175 +569,19 @@
 					{ "type": "html", "content": "apache" }
 				]
 			},
-			"Microsoft IIS": {
-				"patterns": [
-					{ "type": "html", "content": "IIS" }
-				]
-			},
 			"LiteSpeed": {
 				"patterns": [
 					{ "type": "html", "content": "LiteSpeed" }
 				]
-			}
-		}
-	},
-	"ecommerce": {
-		"icon": "🛒",
-		"technologies": {
-			"WooCommerce": {
-				"patterns": [
-					{ "type": "script", "src": "wp-content/plugins/woocommerce" },
-					{ "type": "html", "content": "woocommerce" },
-					{ "type": "global", "name": "wc_add_to_cart_params" }
-				]
 			},
-			"Magento": {
+			"Microsoft IIS": {
 				"patterns": [
-					{ "type": "script", "src": "mage/cookies\\.js" },
-					{ "type": "global", "name": "Mage" },
-					{ "type": "cookie", "name": "frontend" }
-				]
-			},
-			"PrestaShop": {
-				"patterns": [
-					{ "type": "meta", "name": "generator", "content": "PrestaShop" },
-					{ "type": "global", "name": "prestashop" }
-				]
-			},
-			"BigCommerce": {
-				"patterns": [
-					{ "type": "script", "src": "bigcommerce" },
-					{ "type": "html", "content": "bigcommerce" }
-				]
-			},
-			"OpenCart": {
-				"patterns": [
-					{ "type": "cookie", "name": "OCSESSID" },
-					{ "type": "html", "content": "catalog/view/theme" }
+					{ "type": "html", "content": "IIS" }
 				]
 			}
 		}
 	},
-	"cdn": {
-		"icon": "🌐",
-		"technologies": {
-			"Cloudflare": {
-				"patterns": [
-					{ "type": "script", "src": "cloudflare" },
-					{ "type": "cookie", "name": "__cfduid|cf_" }
-				]
-			},
-			"Amazon CloudFront": {
-				"patterns": [
-					{ "type": "script", "src": "cloudfront\\.net" }
-				]
-			},
-			"Fastly": {
-				"patterns": [
-					{ "type": "script", "src": "fastly\\.net" }
-				]
-			},
-			"Akamai": {
-				"patterns": [
-					{ "type": "script", "src": "akamai" }
-				]
-			},
-			"jsDelivr": {
-				"patterns": [
-					{ "type": "script", "src": "cdn\\.jsdelivr\\.net" }
-				]
-			},
-			"unpkg": {
-				"patterns": [
-					{ "type": "script", "src": "unpkg\\.com" }
-				]
-			},
-			"cdnjs": {
-				"patterns": [
-					{ "type": "script", "src": "cdnjs\\.cloudflare\\.com" }
-				]
-			}
-		}
-	},
-	"payment": {
-		"icon": "💳",
-		"technologies": {
-			"Stripe": {
-				"patterns": [
-					{ "type": "script", "src": "js\\.stripe\\.com" },
-					{ "type": "global", "name": "Stripe" }
-				]
-			},
-			"PayPal": {
-				"patterns": [
-					{ "type": "script", "src": "paypal" },
-					{ "type": "global", "name": "paypal" }
-				]
-			},
-			"Square": {
-				"patterns": [
-					{ "type": "script", "src": "squareup\\.com" },
-					{ "type": "global", "name": "Square" }
-				]
-			},
-			"Braintree": {
-				"patterns": [
-					{ "type": "script", "src": "braintreegateway\\.com" },
-					{ "type": "global", "name": "braintree" }
-				]
-			},
-			"Adyen": {
-				"patterns": [
-					{ "type": "script", "src": "adyen" },
-					{ "type": "global", "name": "adyen" }
-				]
-			}
-		}
-	},
-	"css": {
-		"icon": "🎨",
-		"technologies": {
-			"Bootstrap": {
-				"patterns": [
-					{ "type": "script", "src": "bootstrap" },
-					{ "type": "link", "href": "bootstrap" },
-					{ "type": "html", "content": "class=\"[^\"]*\\b(container|row|col-)" }
-				]
-			},
-			"Tailwind CSS": {
-				"patterns": [
-					{ "type": "link", "href": "tailwind" },
-					{ "type": "script", "src": "tailwind" },
-					{ "type": "html", "content": "class=\"[^\"]*\\b(flex|grid|m-|p-|text-|bg-)" }
-				]
-			},
-			"Foundation": {
-				"patterns": [
-					{ "type": "script", "src": "foundation" },
-					{ "type": "link", "href": "foundation" }
-				]
-			},
-			"Bulma": {
-				"patterns": [
-					{ "type": "link", "href": "bulma" },
-					{ "type": "html", "content": "class=\"[^\"]*\\b(column|columns)" }
-				]
-			},
-			"Materialize": {
-				"patterns": [
-					{ "type": "script", "src": "materialize" },
-					{ "type": "link", "href": "materialize" }
-				]
-			},
-			"Pure CSS": {
-				"patterns": [
-					{ "type": "link", "href": "pure-min\\.css" },
-					{ "type": "html", "content": "class=\"[^\"]*\\bpure-" }
-				]
-			}
-		}
-	},
-	"languages": {
+	"programming-languages": {
 		"icon": "💻",
 		"technologies": {
 			"PHP": {
@@ -542,85 +620,95 @@
 			}
 		}
 	},
-	"marketing": {
-		"icon": "📢",
+	"ecommerce": {
+		"icon": "🛒",
 		"technologies": {
-			"Mailchimp": {
+			"WooCommerce": {
 				"patterns": [
-					{ "type": "script", "src": "chimpstatic\\.com" },
-					{ "type": "global", "name": "mc4wp" }
+					{ "type": "script", "src": "wp-content/plugins/woocommerce" },
+					{ "type": "html", "content": "woocommerce" },
+					{ "type": "global", "name": "wc_add_to_cart_params" }
 				]
 			},
-			"HubSpot": {
+			"Magento": {
 				"patterns": [
-					{ "type": "script", "src": "js\\.hs-scripts\\.com" },
-					{ "type": "global", "name": "_hsq" }
+					{ "type": "script", "src": "mage/cookies\\.js" },
+					{ "type": "global", "name": "Mage" },
+					{ "type": "cookie", "name": "frontend" }
 				]
 			},
-			"Intercom": {
+			"PrestaShop": {
 				"patterns": [
-					{ "type": "script", "src": "widget\\.intercom\\.io" },
-					{ "type": "global", "name": "Intercom" }
+					{ "type": "meta", "name": "generator", "content": "PrestaShop" },
+					{ "type": "global", "name": "prestashop" }
 				]
 			},
-			"Drift": {
+			"BigCommerce": {
 				"patterns": [
-					{ "type": "script", "src": "js\\.driftt\\.com" },
-					{ "type": "global", "name": "drift" }
-				]
-			},
-			"Zendesk": {
-				"patterns": [
-					{ "type": "script", "src": "static\\.zdassets\\.com" },
-					{ "type": "global", "name": "zE" }
-				]
-			},
-			"Crisp": {
-				"patterns": [
-					{ "type": "script", "src": "client\\.crisp\\.chat" },
-					{ "type": "global", "name": "$crisp" }
-				]
-			},
-			"Tawk.to": {
-				"patterns": [
-					{ "type": "script", "src": "embed\\.tawk\\.to" },
-					{ "type": "global", "name": "Tawk_API" }
+					{ "type": "script", "src": "bigcommerce" },
+					{ "type": "html", "content": "bigcommerce" }
 				]
 			}
 		}
 	},
-	"hosting": {
-		"icon": "☁️",
+	"cdn": {
+		"icon": "🌐",
 		"technologies": {
-			"Vercel": {
+			"Cloudflare": {
 				"patterns": [
-					{ "type": "html", "content": "vercel" }
+					{ "type": "script", "src": "cloudflare" },
+					{ "type": "cookie", "name": "__cfduid|cf_" }
 				]
 			},
-			"Netlify": {
+			"Amazon CloudFront": {
 				"patterns": [
-					{ "type": "html", "content": "netlify" }
+					{ "type": "script", "src": "cloudfront\\.net" }
 				]
 			},
-			"GitHub Pages": {
+			"jsDelivr": {
 				"patterns": [
-					{ "type": "html", "content": "github\\.io" }
+					{ "type": "script", "src": "cdn\\.jsdelivr\\.net" }
 				]
 			},
-			"Cloudflare Pages": {
+			"unpkg": {
 				"patterns": [
-					{ "type": "html", "content": "pages\\.dev" }
+					{ "type": "script", "src": "unpkg\\.com" }
 				]
 			},
-			"Firebase": {
+			"cdnjs": {
 				"patterns": [
-					{ "type": "script", "src": "firebase" },
-					{ "type": "global", "name": "firebase" }
+					{ "type": "script", "src": "cdnjs\\.cloudflare\\.com" }
+				]
+			}
+		}
+	},
+	"css": {
+		"icon": "🎨",
+		"technologies": {
+			"Bootstrap": {
+				"patterns": [
+					{ "type": "script", "src": "bootstrap" },
+					{ "type": "link", "href": "bootstrap" },
+					{ "type": "html", "content": "class=\"[^\"]*\\b(container|row|col-)" }
 				]
 			},
-			"AWS": {
+			"Tailwind CSS": {
 				"patterns": [
-					{ "type": "script", "src": "amazonaws\\.com" }
+					{ "type": "link", "href": "tailwind" },
+					{ "type": "script", "src": "tailwind" },
+					{ "type": "html", "content": "class=\"[^\"]*\\b(flex|grid|m-|p-|text-|bg-)" }
+				]
+			},
+			"Bulma": {
+				"patterns": [
+					{ "type": "link", "href": "bulma" },
+					{ "type": "html", "content": "class=\"[^\"]*\\b(column|columns)" }
+				]
+			},
+			"Foundation": {
+				"patterns": [
+					{ "type": "script", "src": "foundation" },
+					{ "type": "link", "href": "foundation" }
 				]
 			}
 		}
@@ -647,54 +735,75 @@
 			}
 		}
 	},
-	"maps": {
-		"icon": "🗺️",
+	"tag-managers": {
+		"icon": "🏷️",
 		"technologies": {
-			"Google Maps": {
+			"Google Tag Manager": {
 				"patterns": [
-					{ "type": "script", "src": "maps\\.googleapis\\.com" },
-					{ "type": "global", "name": "google.maps" }
+					{ "type": "script", "src": "googletagmanager\\.com/gtm\\.js" },
+					{ "type": "global", "name": "google_tag_manager" }
 				]
 			},
-			"Mapbox": {
+			"Tealium": {
 				"patterns": [
-					{ "type": "script", "src": "mapbox" },
-					{ "type": "global", "name": "mapboxgl" }
+					{ "type": "script", "src": "tealium" },
+					{ "type": "global", "name": "utag" }
 				]
 			},
-			"Leaflet": {
+			"Adobe Tag Manager": {
 				"patterns": [
-					{ "type": "script", "src": "leaflet" },
-					{ "type": "global", "name": "L" }
+					{ "type": "script", "src": "adobe.*tagmanager" }
 				]
 			}
 		}
 	},
-	"video": {
-		"icon": "🎥",
+	"databases": {
+		"icon": "🗄️",
 		"technologies": {
-			"YouTube": {
+			"MySQL": {
 				"patterns": [
-					{ "type": "script", "src": "youtube\\.com" },
-					{ "type": "html", "content": "youtube\\.com/embed" }
+					{ "type": "html", "content": "mysql" }
 				]
 			},
-			"Vimeo": {
+			"PostgreSQL": {
 				"patterns": [
-					{ "type": "script", "src": "player\\.vimeo\\.com" },
-					{ "type": "html", "content": "vimeo\\.com" }
+					{ "type": "html", "content": "postgresql|postgres" }
 				]
 			},
-			"Wistia": {
+			"MongoDB": {
 				"patterns": [
-					{ "type": "script", "src": "fast\\.wistia" },
-					{ "type": "global", "name": "Wistia" }
+					{ "type": "html", "content": "mongodb" }
 				]
 			},
-			"Video.js": {
+			"Redis": {
 				"patterns": [
-					{ "type": "script", "src": "video\\.js" },
-					{ "type": "global", "name": "videojs" }
+					{ "type": "html", "content": "redis" }
+				]
+			}
+		}
+	},
+	"blogs": {
+		"icon": "✍️",
+		"technologies": {
+			"WordPress": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "WordPress" },
+					{ "type": "script", "src": "wp-(?:content|includes)" }
+				]
+			},
+			"Ghost": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Ghost" }
+				]
+			},
+			"Medium": {
+				"patterns": [
+					{ "type": "meta", "name": "al:android:app_name", "content": "Medium" }
+				]
+			},
+			"Blogger": {
+				"patterns": [
+					{ "type": "meta", "name": "generator", "content": "Blogger" }
 				]
 			}
 		}
@@ -702,6 +811,11 @@
 	"miscellaneous": {
 		"icon": "🔧",
 		"technologies": {
+			"HTTP/3": {
+				"patterns": [
+					{ "type": "html", "content": "http/3|h3" }
+				]
+			},
 			"webpack": {
 				"patterns": [
 					{ "type": "script", "src": "webpack" },
@@ -710,95 +824,12 @@
 			},
 			"Vite": {
 				"patterns": [
-					{ "type": "script", "src": "vite|@vite" },
-					{ "type": "html", "content": "vite" }
+					{ "type": "script", "src": "vite|@vite" }
 				]
 			},
 			"Parcel": {
 				"patterns": [
 					{ "type": "script", "src": "parcel" }
-				]
-			},
-			"Turbo": {
-				"patterns": [
-					{ "type": "script", "src": "turbo" },
-					{ "type": "global", "name": "Turbo" }
-				]
-			},
-			"htmx": {
-				"patterns": [
-					{ "type": "script", "src": "htmx" },
-					{ "type": "html", "content": "hx-" }
-				]
-			},
-			"Socket.io": {
-				"patterns": [
-					{ "type": "script", "src": "socket\\.io" },
-					{ "type": "global", "name": "io" }
-				]
-			},
-			"Three.js": {
-				"patterns": [
-					{ "type": "script", "src": "three" },
-					{ "type": "global", "name": "THREE" }
-				]
-			},
-			"D3.js": {
-				"patterns": [
-					{ "type": "script", "src": "d3(\\.min)?\\.js" },
-					{ "type": "global", "name": "d3" }
-				]
-			},
-			"Chart.js": {
-				"patterns": [
-					{ "type": "script", "src": "chart\\.js" },
-					{ "type": "global", "name": "Chart" }
-				]
-			},
-			"Lodash": {
-				"patterns": [
-					{ "type": "script", "src": "lodash" },
-					{ "type": "global", "name": "_" }
-				]
-			},
-			"Axios": {
-				"patterns": [
-					{ "type": "script", "src": "axios" },
-					{ "type": "global", "name": "axios" }
-				]
-			},
-			"Day.js": {
-				"patterns": [
-					{ "type": "script", "src": "dayjs" },
-					{ "type": "global", "name": "dayjs" }
-				]
-			},
-			"Moment.js": {
-				"patterns": [
-					{ "type": "script", "src": "moment" },
-					{ "type": "global", "name": "moment" }
-				]
-			}
-		}
-	},
-	"security": {
-		"icon": "🔒",
-		"technologies": {
-			"reCAPTCHA": {
-				"patterns": [
-					{ "type": "script", "src": "recaptcha" },
-					{ "type": "global", "name": "grecaptcha" }
-				]
-			},
-			"hCaptcha": {
-				"patterns": [
-					{ "type": "script", "src": "hcaptcha" },
-					{ "type": "global", "name": "hcaptcha" }
-				]
-			},
-			"Cloudflare Turnstile": {
-				"patterns": [
-					{ "type": "script", "src": "challenges\\.cloudflare\\.com" }
 				]
 			}
 		}
@@ -822,33 +853,68 @@
 					{ "type": "script", "src": "sentry" },
 					{ "type": "global", "name": "Sentry" }
 				]
-			},
-			"Datadog": {
+			}
+		}
+	},
+	"payment": {
+		"icon": "💳",
+		"technologies": {
+			"Stripe": {
 				"patterns": [
-					{ "type": "script", "src": "datadoghq" },
-					{ "type": "global", "name": "DD_RUM" }
+					{ "type": "script", "src": "js\\.stripe\\.com" },
+					{ "type": "global", "name": "Stripe" }
+				]
+			},
+			"PayPal": {
+				"patterns": [
+					{ "type": "script", "src": "paypal" },
+					{ "type": "global", "name": "paypal" }
+				]
+			},
+			"Square": {
+				"patterns": [
+					{ "type": "script", "src": "squareup\\.com" },
+					{ "type": "global", "name": "Square" }
 				]
 			}
 		}
 	},
-	"ab-testing": {
-		"icon": "🧪",
+	"marketing": {
+		"icon": "📢",
 		"technologies": {
-			"Optimizely": {
+			"Mailchimp": {
 				"patterns": [
-					{ "type": "script", "src": "optimizely" },
-					{ "type": "global", "name": "optimizely" }
+					{ "type": "script", "src": "chimpstatic\\.com" },
+					{ "type": "global", "name": "mc4wp" }
 				]
 			},
-			"Google Optimize": {
+			"HubSpot": {
 				"patterns": [
-					{ "type": "script", "src": "google-analytics\\.com/.*optimize" }
+					{ "type": "script", "src": "js\\.hs-scripts\\.com" },
+					{ "type": "global", "name": "_hsq" }
 				]
 			},
-			"VWO": {
+			"Intercom": {
 				"patterns": [
-					{ "type": "script", "src": "visualwebsiteoptimizer" },
-					{ "type": "global", "name": "_vwo_code" }
+					{ "type": "script", "src": "widget\\.intercom\\.io" },
+					{ "type": "global", "name": "Intercom" }
+				]
+			}
+		}
+	},
+	"security": {
+		"icon": "🔒",
+		"technologies": {
+			"reCAPTCHA": {
+				"patterns": [
+					{ "type": "script", "src": "recaptcha" },
+					{ "type": "global", "name": "grecaptcha" }
+				]
+			},
+			"hCaptcha": {
+				"patterns": [
+					{ "type": "script", "src": "hcaptcha" },
+					{ "type": "global", "name": "hcaptcha" }
 				]
 			}
 		}
